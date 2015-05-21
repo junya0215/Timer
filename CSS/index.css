@@ -1,0 +1,143 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,html{
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+  -webkit-user-select: none;
+}
+
+#wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+
+#numbers{
+  
+  flex-basis: 20%;
+
+  display: none;
+  flex-flow: row wrap;
+  align-items: stretch;
+  background: #00f;
+
+  user-select: none;
+}
+
+#numbers div{
+  font-size: 5em;
+  flex: 1 1 auto;
+  position: relative;
+  border: 1px solid #fff;
+}
+
+#numbers span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#timer{
+  flex-basis: 70%;
+  font-size: 11em;
+  display: flex;
+  background: #000;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+
+#timer .kugiri{
+  margin-top: -0.142em;
+}
+
+#control-buttons{
+  flex-basis: 10%;
+  display: flex;
+  justify-content: space-around;
+  background: #000;
+  font-size: 2.6em;
+  border-top: 4px solid rgba(0,0,255,0.8);
+
+  align-items: center;
+}
+
+#control-buttons i{
+  Opacity: 0.2;
+  transition: 0.5s;
+}
+
+#control-buttons i:active{
+  color: yellow;
+}
+
+#control-buttons:hover > div i{
+  Opacity: 1;
+}
+
+.selected{
+  box-shadow:rgba(255,255,0,1) 0px 0px 6px 3px;
+}
+
+@media screen and (min-width: 769px){
+  #timer{
+    flex-basis: 80%;
+  }
+
+  #control-buttons{
+    flex-basis: 20%;
+
+  }
+}
+
+/* タブレット */
+@media screen and (max-width: 768px){
+  #numbers{
+    display: flex;
+  }
+
+  #numbers div{
+    font-size: 2.5em;
+    flex-basis: 20%;
+  }
+
+  #timer{
+    font-size: 7em;
+  }
+
+  #control-buttons{
+    font-size: 1.5em;
+  }
+}
+
+/* スマフォ */
+@media screen and (max-width:640px){
+  html,body{
+    height: 100%;
+  }
+
+  #numbers{
+    display: flex;
+  }
+
+  #numbers div{
+    font-size: 1.5em;
+  }
+
+  #timer{
+    font-size: 5em;
+  }
+
+  #control-buttons{
+    font-size: 1em;
+  }
+}
