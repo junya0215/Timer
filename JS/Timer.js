@@ -94,6 +94,8 @@ function countDown() {
       }else if(hrs == 0 && min == 0){
         clearInterval(timerId);
         timerId = null;
+        Alarm();
+        document.title = 'Time is up';
         return;
       }
       
@@ -112,6 +114,8 @@ function countDown() {
     $('#minutes').text(min);
     $('#second').text(sec);
 
+    document.title = $('#timer').text();
+
   }, 1000)
 }
 
@@ -124,6 +128,7 @@ function pause() {
   if(timerId) {
     clearInterval(timerId);
     timerId = null;
+    document.title = '[Pause]'+$('#timer').text();
   }
 }
 
@@ -132,6 +137,7 @@ function reset() {
   $('#hour').text('00');
   $('#minutes').text('00');
   $('#second').text('00');
+  document.title = 'Timer';
 }
 
 var setMode = function () {
@@ -143,3 +149,8 @@ var setMode = function () {
 }
 
 $('#control-buttons>div').on('click',setMode);
+
+function Alarm(){
+  $('#sound')[0].currentTime = 0;
+  $('#sound')[0].play();
+}

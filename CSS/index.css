@@ -88,6 +88,16 @@ body,html{
   box-shadow:rgba(255,255,0,1) 0px 0px 6px 3px;
 }
 
+#sozai{
+  text-align: center;
+  font-size: 10px;
+  color: #000;
+}
+
+#sozai a{
+  margin-left: 20px;
+}
+
 @media screen and (min-width: 769px){
   #timer{
     flex-basis: 80%;
